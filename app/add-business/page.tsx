@@ -44,7 +44,7 @@ export default async function AddBusinessPage() {
             <div className="w-full">
               <AlertTitle>Welcome!</AlertTitle>
               <AlertDescription>
-                Create your account to start advertising on
+                Create your account to start advertising on{" "}
                 <span className="text-[#1AB266]">HerbPharmsHub</span>
               </AlertDescription>
             </div>
