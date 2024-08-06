@@ -1,5 +1,6 @@
 import AddCompanyForm from "@/components/AddCompanyForm";
 import LoginButton from "@/components/LoginButton";
+import LogoutButton from "@/components/LogoutButton";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -24,7 +25,7 @@ export default async function AddBusinessPage() {
             headaches.
           </p>
           <p>
-            All you need to do is create an account on the{" "}
+            All you need to do is create an account on the
             <span className="text-[#1AB266]">HerbPharmsHub</span> website
             easily, enter your contact details, and within moments you and your
             company will be exposed to thousands of visitors. After creating
@@ -43,7 +44,7 @@ export default async function AddBusinessPage() {
             <div className="w-full">
               <AlertTitle>Welcome!</AlertTitle>
               <AlertDescription>
-                Create your account to start advertising on{" "}
+                Create your account to start advertising on
                 <span className="text-[#1AB266]">HerbPharmsHub</span>
               </AlertDescription>
             </div>
@@ -56,8 +57,24 @@ export default async function AddBusinessPage() {
     );
   }
   return (
-    <div>
-      <AddCompanyForm />
+    <div className="min-h-screen p-4 md:p-10">
+      <MaxWidthWrapper className="space-y-8">
+        <h1 className="text-2xl md:text-4xl font-bold text-center">
+          Add your business to HubPharmsHub
+        </h1>
+        <Alert className="flex items-center justify-between">
+          <RocketIcon className="size-4" />
+          <div className="w-full">
+            <AlertTitle>Logged in as {user.email}</AlertTitle>
+            <AlertDescription>
+              Create and submit your account for{" "}
+              <span className="text-[#1AB266]">HerbPharmsHub</span> approval
+            </AlertDescription>
+          </div>
+          <LogoutButton>Logout</LogoutButton>
+        </Alert>
+        <AddCompanyForm />
+      </MaxWidthWrapper>
     </div>
   );
 }
